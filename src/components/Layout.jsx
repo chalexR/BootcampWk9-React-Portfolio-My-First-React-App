@@ -1,96 +1,31 @@
-import NavBar from './NavBar'
-import Footer from './Footer';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
 
+// Set what pages we need to build a link for
 const pages = [
-  { name: 'Home', key: 'home' },
-  { name: 'About', key: 'about' },
-  { name: 'Contact', key: 'contact' },
+  { name: 'Home', key: '' },
+  { name: 'Contact', key: 'contact' }
 ]
+//const [selectedInfo, setSelectedInfo] = useState('Professional');
 
-const Layout = ({ children, selectedPage, onSetPage }) => {
+const Layout = () => {
 
-  // TODO: what's stored in children, selectedPage, and onSetPage?
+    const renderPageLink = () => {
+        return pages.map(page => (
+            <li><Link to={`/${page.key}`}>{page.name}</Link> </li>
+        ))
+    }
 
-  const renderPageLinks = () => {
-        
-    // TODO: What does this function do?
-    return pages.map(page => (
-       <li
-          key={page.key}
-          style={{
-            ...styles.sidebarLink,
-            ...(page.key === selectedPage ? styles.selected : {}),
-          }}
-          onClick={() => onSetPage(page.key)}
-        >
-          {page.name}
-        </li>
-    ));
-  }
-
-
-  return (
-    <div style={styles.container}>
-      {/* Navigation */}
-      <NavBar />
-
-      <div style={styles.main}>
-        {/* Sidebar */}
-        <aside style={styles.sidebar}>
-          <ul>
-           {renderPageLinks()}
-          </ul>
-        </aside>
-
-        {/* Content Area */}
-        <section style={styles.content}>
-          {children}
-        </section>
-      </div>
-
-      {/* Footer */}
-      <Footer />
-     
-    </div>
-  );
-};
-
-// Inline styles for simplicity
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-    minWidth: '100vw',
-  },
-  selected: {
-    backgroundColor: '#999',
-  },
-  main: {
-    display: 'flex',
-    flex: 1,
-  },
-  sidebar: {
-    width: '200px',
-    backgroundColor: '#f4f4f4',
-    padding: '5px',
-  },
-  content: {
-    flex: 1,
-    padding: '20px',
-  },
-  footer: {
-    backgroundColor: '#333',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px',
-  },
-  sidebarLink: {
-    display: 'block',
-    padding: '5px',
-    color: '#333',
-    textDecoration: 'none',
-  },
-};
+    return (
+        <Router>
+            <div>
+                {renderPageLink()}
+                <Routes>
+                    <Route path="/" element={<HomePage/>} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
 
 export default Layout;
