@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - [Your Name]</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #2E1A47; /* Lighter Purple Background */
+      color: #F6F3F9; /* Soft Light Text */
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background-color: #3B255B; /* Secondary Background */
+    }
+
+    nav a {
+      color: #CBBBD7; /* Muted Text */
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #A66EFF; /* Brighter Lavender Hover */
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 85vh;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 400;
+      color: #CBBBD7;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* Muted Pink Buttons */
+    .btn {
+      background-color: #E09EC3; /* Dusty Rose */
+      color: #2E1A47; /* Deep Purple Text */
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #F2BFD7; /* Soft Blush Hover */
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">[Your Name]</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Work</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm [Your Name]</h1>
+    <h2>Creative Developer & Designer</h2>
+    <div class="buttons">
+      <button class="btn">View My Work</button>
+      <button class="btn">Contact Me</button>
+    </div>
+  </section>
+</body>
+</html>

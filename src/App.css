@@ -1,3 +1,20 @@
+:root {
+  /* Core Color Palette */
+  --color-bg-main: #2E1A47;
+  --color-bg-secondary: #3B255B;
+  --color-text-main: #F6F3F9;
+  --color-text-muted: #CBBBD7;
+
+  /* Accent Colors */
+  --color-accent-primary: #6C3FB5;
+  --color-accent-hover: #A66EFF;
+
+  /* Button (Pink Accent) */
+  --color-btn-bg: #E09EC3;
+  --color-btn-hover: #F2BFD7;
+  --color-btn-text: #2E1A47;
+}
+
 
 @keyframes logo-spin {
   from {
@@ -13,11 +30,38 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+#root{width:100%;}
 
-.card {
-  padding: 2em;
+.page-nav{
+  top:0;
+  position:fixed;
 }
 
-.read-the-docs {
-  color: #888;
+body{
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+.information-holder{
+  margin: 0;
+  padding: 0;
+}
+.information-button{
+  margin: 2px 5px 0 5px;
+  background-color:rgb(43, 14, 54);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+}
+.information-navbar{
+  margin: 0;
+  padding: 0;
+}
+.information-content{
+  background-color: #f8e9f8;
+  color: black;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
 }

@@ -5,7 +5,7 @@ const Professional = () => {
   return (
     <div>
       <h2>Professional Section</h2>
-      <p>This is the main content of the home page.</p>
+      <p>This will have an overview of my professional career</p>
     </div>
   );
 };
