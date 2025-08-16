@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react
 import { AnimatePresence, motion } from 'framer-motion';
 import ListProjects  from './ListProjects';
 import Header  from './Header';
+import Footer  from './Footer';
 import HomePage from '../pages/HomePage';
 import ContactPage from '../pages/ContactPage';
 import ProjectPage from '../pages/ProjectPage';
@@ -32,6 +33,7 @@ const Layout = (children) => {
                     <ListProjects projectListToggle={projectListToggle}/>
                 </aside>
             </section>
+            <Footer />
         </div>
     );
 }
