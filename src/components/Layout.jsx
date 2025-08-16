@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import ListProjects  from './ListProjects';
 import HomePage from '../pages/HomePage';
 import ContactPage from '../pages/ContactPage';
@@ -14,6 +15,8 @@ const pages = [
 
 const Layout = (children) => {
     const location = useLocation();
+    //constant to toggle the project list when viewed on mobile
+    const [projectListToggle, setProjectListToggle] = useState(null); // null to not show ProjectList
 
     const renderPageLink = () => {
         return pages.map(page => (
@@ -32,7 +35,7 @@ const Layout = (children) => {
                 </ul> 
             </nav>
             <section className="main-content-holder">
-                <main className="main-page-loader">
+                <main className={projectListToggle ? "main-page-holder list-shrink" : "main-page-holder"}>
                     <AnimatePresence mode="wait">
                         <Routes location={location} key={location.pathname}>
                             <Route path="/" element={<HomePage />} />
@@ -42,7 +45,10 @@ const Layout = (children) => {
                     </AnimatePresence>
                 </main>
                 <aside className="project-list">
-                    <ListProjects />
+                    <div className="project-list-toggle" onClick={() => setProjectListToggle(!projectListToggle)}>
+                        <div>&lt;</div>
+                    </div>
+                    <ListProjects projectListToggle={projectListToggle}/>
                 </aside>
             </section>
         </div>

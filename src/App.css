@@ -33,6 +33,9 @@ a:hover{
   justify-content: space-between;
   width:100%;
 }
+.main-content-int{
+  min-width:400px;
+}
 .main-page-loader{
   box-sizing:border-box;
 
@@ -45,7 +48,47 @@ a:hover{
 }
 .project-list{
   width:15vw;
-  height:100%;
-  margin-right:10px;
+  min-height:80vh;
   overflow-x: hidden;
+  display:flex;
+}
+.project-list-display{
+  margin-right:10px;
+}
+.project-list-toggle{
+  display:none;
+  height:100%;
+  background-color:var(--color-btn-bg);
+  justify-content: center;
+  align-items: center;
+}
+.project-list-toggle div{
+  margin: 0 5px;
+  color: var(--color-bg-main);
+  font-weight:bolder;
+  font-size:24px;
+}
+.list-expand{
+  display:block !important;
+  width:80vw !important;
+}
+.list-shrink{
+  width:5vw !important;
+  overflow: hidden;
+}
+
+@media (max-width:700px){
+  .main-page-loader{
+    width:auto;
+    flex-grow:1;
+  }
+  .project-list{
+    width:auto;
+  }
+  .project-list-toggle{
+    display: flex !important;
+  }
+  .project-list-display {
+    display:none;
+  }
 }

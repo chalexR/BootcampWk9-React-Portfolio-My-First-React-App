@@ -52,7 +52,7 @@ const ProjectPage = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
         >
-            <div>
+            <div className="main-content-int">
                 <h2>{selectedRepo.name}</h2>
                 <p>{selectedRepo.description}</p>
                 <p>⭐ {selectedRepo.stargazers_count}</p>

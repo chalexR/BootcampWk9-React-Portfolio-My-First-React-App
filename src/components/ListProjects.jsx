@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const ListProjects = ({setInfo, setRepoName}) => {
+const ListProjects = ({projectListToggle}) => {
     const [repos, setRepos] = useState([]);
     const [error, setError] = useState(null);
 
@@ -34,7 +34,7 @@ const ListProjects = ({setInfo, setRepoName}) => {
     }, []);
 
     return (
-        <div>
+        <div className={projectListToggle ? "project-list-display list-expand": "project-list-display"}>
             {error && <p>{error}</p>}
             <ul>
                 {repos.map((repo) => (
