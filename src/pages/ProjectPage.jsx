@@ -14,7 +14,6 @@ const ProjectPage = () => {
     // # DONE get the value of the query "q" parameter
     const queryParams = queryString.parse(location.search);
     const repoName = queryParams.id;
-    console.log(repoName);
 
     const token = import.meta.env.VITE_REACT_APP_GITHUB_TOKEN;
     const [selectedRepo, setSelectedRepo] = useState(null)
@@ -26,7 +25,7 @@ const ProjectPage = () => {
                     Authorization: `token ${token}`,
                 },
             });
-            console.log("Repo details:", response.data);
+            //console.log("Repo details:", response.data);
             setSelectedRepo(response.data);
         }catch (err) {
             console.error("Failed to fetch repo details", err);
