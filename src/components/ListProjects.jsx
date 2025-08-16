@@ -38,9 +38,12 @@ const ListProjects = ({setInfo, setRepoName}) => {
             {error && <p>{error}</p>}
             <ul>
                 {repos.map((repo) => (
-                    <li key={repo.id} onClick={() => handleSetInfo(repo.name)}>
-                       {repo.name}
+                    <li key={repo.id}>
+                        <Link to={`/project?id=${repo.name}`}>{repo.name}</Link>
                     </li>
+                    // <li key={repo.id} onClick={() => handleSetInfo(repo.name)}>
+                    //    {repo.name}
+                    // </li>
                 ))}
             </ul>
         </div>

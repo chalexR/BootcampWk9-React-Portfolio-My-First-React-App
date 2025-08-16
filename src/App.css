@@ -14,3 +14,38 @@
   --color-btn-hover: #F2BFD7;
   --color-btn-text: #2E1A47;
 }
+body{
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+a{
+  color: var(--color-text-main);
+}
+a:hover{
+  color: var(--color-accent-hover);
+}
+.container-fluid{
+  width:100%;
+  height:100%;
+}
+.main-content-holder{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+}
+.main-page-loader{
+  box-sizing:border-box;
+
+  width:80vw;
+  min-height:80vh;
+
+  padding:1%;
+  border-right: solid 2px var(--color-accent-primary);
+  transition: ease 2s;
+}
+.project-list{
+  width:15vw;
+  height:100%;
+  margin-right:10px;
+  overflow-x: hidden;
+}
