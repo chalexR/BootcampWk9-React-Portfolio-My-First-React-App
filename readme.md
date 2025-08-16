@@ -1,100 +1,71 @@
-# This is just a test for coursework, this will be updated shortly
+# My First React Portfolio App
 
-# How to Set Up a GitHub Repository and Deploy a React Application to Render
+This is my **first React application**, built as part of a learning assignment. It showcases personal and development projects pulled directly from my GitHub, with plans to expand the portfolio functionality in the future.
 
-This guide will walk you through the steps to create a GitHub repository, add an existing React application to it, commit the changes, and deploy the application to [Render](https://render.com/).
+Creating this project has been a **brilliant learning curve**—I’ve really enjoyed working with React, exploring component-based architecture, state management, hooks, API integration, and animation with Framer Motion.
 
----
+## 🚀 Features
 
-## Prerequisites
+- Built using **React** and **Vite**
+- Live fetch of personal GitHub repositories via the **GitHub API**
+- Smooth **page transitions** using **Framer Motion**
+- Mobile-first, **responsive design**
+- Toggleable **project list drawer** (for better UX on small screens)
+- Modular components with **React Router** for page navigation
 
-- A GitHub account
-- A Render account
-- Git installed on your local machine
-- An existing React application on your local machine
+## 🛠️ Technologies Used
 
----
+- React
+- React Router DOM
+- Axios
+- Framer Motion
+- Vite (build tool)
+- CSS Variables for theming
 
-## Step 1: Create a GitHub Repository
+## 📦 Planned Features (Post-Submission)
 
-1. Log in to your GitHub account.
-2. Navigate to the **Repositories** tab on your profile page.
-3. Click the **New** button to create a new repository.
-4. Enter a **Repository name** (e.g., `my-react-app`).
-5. Optionally, add a **Description**.
-6. Choose the repository’s **visibility** (Public or Private).
-7. Leave the **Initialize this repository with a README** option unchecked, as you’ll be adding an existing project.
-8. Click **Create repository**.
+Although I have run out of time for this assignment, in a full version of the app I would like to implement the following:
 
----
+- 🔄 **Load additional design projects from a "database"**  
+  - In deployable models: A **JSON-based storage file**  
+  - In production: A **SQL database**
 
-## Step 2: Add Your React Application to the GitHub Repository
+- 🔍 **Filterable project types**  
+  Filter and view projects based on categories like:
+  - Design
+  - HTML
+  - Front-end
+  - JavaScript
+  - React
 
-1. Open a terminal on your local machine.
-2. Navigate to the root folder of your existing React application using the `cd` command. For example:
-   ```bash
-   cd path/to/your-react-app
-   ```
-3. Initialize a Git repository in your project folder:
+- 🎬 **Extended animations**  
+  Add fade-in transitions for:
+  - Home page
+  - Contact page
 
-```bash
-git init
-```
+## 🧠 Lessons Learned
 
-4. Add the GitHub repository as a remote origin:
+This app has helped me understand:
+- The importance of clean, reusable components
+- Handling state with `useState` and side effects with `useEffect`
+- Managing conditional rendering and props between components
+- How to integrate and securely use APIs (e.g., GitHub API with auth tokens)
+- The power of animations in improving user experience
 
-```bash
-git remote add origin https://github.com/your-username/my-react-app.git
-```
+## 📁 Setup & Installation
 
-- Replace your-username and my-react-app with your GitHub username and repository name.
-
-5. Stage all files in your React app:
-
-```bash
-git add .
-```
-
-6. Commit the files:
-
-```bash
-git commit -m "Initial commit"
-```
-
-7. Push the files to your GitHub repository:
+Clone the repository and run:
 
 ```bash
-git push -u origin main
+npm install
+npm run dev
 ```
 
-## Step 3: Deploy to Render
+You will need to add a .env file with your GitHub token:
+```
+VITE_REACT_APP_GITHUB_TOKEN=your_personal_access_token
+```
 
-1. Log in to your Render account.
-2. On your Render dashboard, click the New button and select Web Service.
-3. In the Connect a Repository section, choose Connect account if you haven’t connected your GitHub account to Render yet.
-4. Once your GitHub account is connected, select your my-react-app repository.
-5. Configure the deployment settings:
+## 📄 License
 
-   - Name: Enter a name for your service (e.g., my-react-app).
-   - Region: Choose your preferred region.
-   - Branch: Set to main.
-   - Build Command: Use the default React build command
-
-   ```bash
-   npm install && npm run build
-   ```
-
-   - Start Command: Use the following command to start the React app:
-
-   ```bash
-   npx serve -s dist
-   ```
-
-6. Click Create Web Service.
-
-Render will now build and deploy your application. Once the deployment is complete, Render will provide a URL where your app is live.
-
-## Additional Notes
-
-- If you make changes to your React app, repeat the steps to **add**, **commit**, and **push** your changes to GitHub. Render will automatically redeploy the updated app.
-- For more details, refer to [Render’s official documentation for deploying React applications](https://render.com/docs/deploy-create-react-app).
+This project is for educational purposes only and not yet licensed.
