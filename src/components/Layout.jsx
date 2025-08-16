@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import ListProjects  from './ListProjects';
 import HomePage from '../pages/HomePage';
 import ContactPage from '../pages/ContactPage';
@@ -12,6 +13,7 @@ const pages = [
 //const [selectedInfo, setSelectedInfo] = useState('Professional');
 
 const Layout = (children) => {
+    const location = useLocation();
 
     const renderPageLink = () => {
         return pages.map(page => (
@@ -31,11 +33,13 @@ const Layout = (children) => {
             </nav>
             <section className="main-content-holder">
                 <main className="main-page-loader">
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/contact" element={<ContactPage />} />
-                        <Route path="/project" element={<ProjectPage />} />
-                    </Routes>
+                    <AnimatePresence mode="wait">
+                        <Routes location={location} key={location.pathname}>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/contact" element={<ContactPage />} />
+                            <Route path="/project" element={<ProjectPage />} />
+                        </Routes>
+                    </AnimatePresence>
                 </main>
                 <aside className="project-list">
                     <ListProjects />
