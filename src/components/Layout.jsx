@@ -28,7 +28,7 @@ const Layout = (children) => {
 
     return (
         <div className="container-fluid">
-            <nav className="navbar navbar-expand-md page-nav">
+            <nav className="navbar">
                 <Link className="navbar-brand" to='/'>Charles Richer</Link>
                 <ul>
                     {renderPageLink()}
@@ -46,7 +46,7 @@ const Layout = (children) => {
                 </main>
                 <aside className="project-list">
                     <div className="project-list-toggle" onClick={() => setProjectListToggle(!projectListToggle)}>
-                        <div>&lt;</div>
+                        <div>{projectListToggle ? ">" : "<"}</div>
                     </div>
                     <ListProjects projectListToggle={projectListToggle}/>
                 </aside>
