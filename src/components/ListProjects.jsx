@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const GitHubRepos = ({setInfo, setRepoName}) => {
+const ListProjects = ({setInfo, setRepoName}) => {
     const [repos, setRepos] = useState([]);
     const [error, setError] = useState(null);
 
@@ -47,4 +47,4 @@ const GitHubRepos = ({setInfo, setRepoName}) => {
     )
 }
 
-export default GitHubRepos;
+export default ListProjects;

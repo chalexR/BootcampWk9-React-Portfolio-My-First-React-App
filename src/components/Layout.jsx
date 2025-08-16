@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ListProjects  from './ListProjects';
 import HomePage from '../pages/HomePage';
 import ContactPage from '../pages/ContactPage';
 
@@ -18,25 +19,29 @@ const Layout = (children) => {
     }
 
     return (
-        <Router>
-            <div className="container-fluid">
-                <nav className="navbar navbar-expand-md page-nav">
-                    <Link className="navbar-brand" to='/'>Charles Richer</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            {renderPageLink()}
-                        </div>
+        <div className="container-fluid">
+            <nav className="navbar navbar-expand-md page-nav">
+                <Link className="navbar-brand" to='/'>Charles Richer</Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="navbar-nav">
+                        {renderPageLink()}
                     </div>
-                </nav>
-                    <Routes>
-                        <Route path="/" element={<HomePage/>} />
-                        <Route path="/contact" element={<ContactPage/>} />
-                    </Routes>
-            </div>
-        </Router>
+                </div>
+            </nav>
+            <main>
+
+            </main>
+            <aside>
+                <ListProjects />
+            </aside>
+                <Routes>
+                    <Route path="/" element={<HomePage/>} />
+                    <Route path="/contact" element={<ContactPage/>} />
+                </Routes>
+        </div>
     );
 }
 

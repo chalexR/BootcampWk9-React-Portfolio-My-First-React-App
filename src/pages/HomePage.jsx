@@ -6,7 +6,6 @@ import Design from '../pages/home/Design';
 import Coding from '../pages/home/Coding';
 import Consult from '../pages/home/Consult';
 import Project from '../pages/home/Project';
-import GitHubRepos  from '../components/GitHubRepos';
 
 const HomePage = () => {
     // TODO: Create a script to pull API from github, along with jobs stored in JSON file.
@@ -32,11 +31,6 @@ const HomePage = () => {
                     {info === "Consult" && <Consult />}
                     {info === "Repo" && <Project repoName={repoName} />}
                 </div>
-            </div>
-            <div className="col-lg-2"></div>
-            <div className="col-lg-5 gx-5 information-content">
-                <h1>Project List</h1>
-                <GitHubRepos setInfo={setInfo} setRepoName={setRepoName} />
             </div>
         </div>
         </>
