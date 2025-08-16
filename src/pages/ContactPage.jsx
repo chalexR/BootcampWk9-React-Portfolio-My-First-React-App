@@ -4,8 +4,14 @@ import React from 'react';
 const HomePage = () => {
   return (
     <div>
-      <h2>Welcome to the Contact Page</h2>
-      <p>This is the main content of the contact page.</p>
+      <h2>Contact Details</h2>
+      <p>Charles Richer-Smith</p>
+      <p>📍 Southampton, UK</p>
+      <p>📞 +44 7911 123456</p>
+      <p>📧 charles@richersmith.dev</p>
+      <p>🌐 www.richersmith.dev</p>
+      <p>💼 github.com/chalexR</p>
+      <p>🔗 linkedin.com/in/charlesrichersmith</p>
     </div>
   );
 };
