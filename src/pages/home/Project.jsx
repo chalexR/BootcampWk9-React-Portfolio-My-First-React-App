@@ -1,0 +1,42 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const Project = ({repoName}) => {
+    const token = import.meta.env.VITE_REACT_APP_GITHUB_TOKEN;
+    const [selectedRepo, setSelectedRepo] = useState(null)
+    const fetchRepoDetails = async (repoName) => {
+        try {
+            const response = await axios.get(`https://api.github.com/repos/chalexR/${repoName}`, {
+                headers: {
+                    Authorization: `token: ${token}`,
+                },
+            });
+            console.log("Repo details:", response.data);
+            setSelectedRepo(response.data);
+        }catch (err) {
+            console.error("Failed to fetch repo details", err);
+        }
+    }
+
+    useEffect(() => {
+        if (repoName) {
+        fetchRepoDetails(repoName);
+        }
+    }, [repoName]);
+
+    return (
+        <>
+        {selectedRepo && (
+        <div>
+            <h2>{selectedRepo.name}</h2>
+            <p>{selectedRepo.description}</p>
+            <p>⭐ {selectedRepo.stargazers_count}</p>
+            <p>📝 Language: {selectedRepo.language}</p>
+            <p>📅 Created: {new Date(selectedRepo.created_at).toLocaleDateString()}</p>
+        </div>
+        )}
+        </>
+    )
+}
+
+export default Project;
